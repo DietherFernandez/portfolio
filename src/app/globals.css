@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F7F7F5;
+    --surface: #FFFFFF;
+    --card: #FFFFFF;
+    --border: #E5E5E5;
+    --text: #171717;
+    --text-secondary: #525252;
+    --text-muted: #737373;
+    --accent: #7CFF6B;
+  }
+
+  [data-theme='dark'] {
+    --background: #111111;
+    --surface: #171717;
+    --card: #1C1C1C;
+    --border: #2A2A2A;
+    --text: #F5F5F5;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --accent: #7CFF6B;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--text)] transition-colors duration-200;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+}
