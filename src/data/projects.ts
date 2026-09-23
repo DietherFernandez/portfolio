@@ -32,7 +32,11 @@ export const projects: Project[] = [
       'Payment and financial record tracking',
       'Session history and analytics'
     ],
-    screenshots: [],
+    screenshots: [
+      '/project_sample/netdesk/screenshot1.png',
+      '/project_sample/netdesk/screenshot2.png',
+      '/project_sample/netdesk/screenshot3.png',
+    ],
     links: {
       live: 'https://netdesk-phi.vercel.app/',
     }

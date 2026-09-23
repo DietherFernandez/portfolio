@@ -21,13 +21,15 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
     <div className="space-y-12 py-6 transition-opacity duration-300 animate-in fade-in slide-in-from-bottom-2">
       {/* Header */}
       <header className="space-y-6">
-        <Link
-          href="/projects"
-          className="flex items-center gap-2 text-xs text-secondary hover:text-accent transition-colors group"
-        >
-          <ArrowLeft className="w-3 h-3 transition-transform duration-300 group-hover:-translate-x-1" />
-          <span className="mono uppercase tracking-wider">Back to Applications</span>
-        </Link>
+        <div className="mt-6 md:mt-0">
+          <Link
+            href="/projects"
+            className="flex items-center gap-2 text-xs text-secondary hover:text-accent transition-colors group"
+          >
+            <ArrowLeft className="w-3 h-3 transition-transform duration-300 group-hover:-translate-x-1" />
+            <span className="mono uppercase tracking-wider">Back to Applications</span>
+          </Link>
+        </div>
 
         <div className="space-y-4">
           <div className="flex items-center gap-3">
@@ -92,15 +94,29 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         <h3 className="text-xs mono text-muted uppercase tracking-widest border-b border-border pb-2">
           Screenshots
         </h3>
-        <div className="os-card aspect-video flex flex-col items-center justify-center text-center space-y-3 border-dashed bg-transparent">
-          <div className="p-3 rounded-full bg-border">
-            <Monitor className="w-6 h-6 text-muted" />
+        {project.screenshots && project.screenshots.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.screenshots.map((src, i) => (
+              <div key={i} className="os-card overflow-hidden group relative">
+                <img
+                  src={src}
+                  alt={`Screenshot ${i + 1}`}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
-          <div className="space-y-1">
-            <p className="text-sm font-medium text-secondary">Project visuals will be added here</p>
-            <p className="text-xs text-muted mono">awaiting_assets.bin</p>
+        ) : (
+          <div className="os-card aspect-video flex flex-col items-center justify-center text-center space-y-3 border-dashed bg-transparent">
+            <div className="p-3 rounded-full bg-border">
+              <Monitor className="w-6 h-6 text-muted" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-sm font-medium text-secondary">Project visuals will be added here</p>
+              <p className="text-xs text-muted mono">awaiting_assets.bin</p>
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Links Section */}
