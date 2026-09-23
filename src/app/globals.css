@@ -248,6 +248,26 @@
   }
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 999;
+  clip-path: circle(0% at var(--x) var(--y));
+  transition: clip-path 0.4s ease-in-out;
+}
+
+.theme-transitioning ::view-transition-new(root) {
+  clip-path: circle(150% at var(--x) var(--y));
+}
+
 /* View Transition styles for circular reveal */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -262,7 +282,7 @@
 ::view-transition-new(root) {
   z-index: 999;
   clip-path: circle(0% at var(--x) var(--y));
-  transition: clip-path 0.8s ease-in-out;
+  transition: clip-path 0.4s ease-in-out;
 }
 
 .theme-transitioning ::view-transition-new(root) {
