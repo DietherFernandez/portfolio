@@ -48,7 +48,7 @@ export default function Sidebar() {
         <div className="flex flex-col items-center text-center space-y-3">
           <div className="relative w-20 h-20 rounded-os border-2 border-sb-border overflow-hidden bg-card group">
             <img
-              src="/icons/profile.jpg"
+              src="/icons/profile.png"
               alt="Diether Fernandez"
               className="w-full h-full object-cover"
               onError={(e) => {

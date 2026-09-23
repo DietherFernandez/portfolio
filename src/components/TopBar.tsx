@@ -43,7 +43,7 @@ export default function TopBar() {
           {/* Mobile Profile Photo */}
           <div className="sm:hidden relative w-16 h-16 rounded-full border border-border overflow-hidden bg-card shrink-0">
             <img
-              src="/icons/profile.jpg"
+              src="/icons/profile.png"
               alt="Diether Fernandez"
               className="w-full h-full object-cover"
             />
