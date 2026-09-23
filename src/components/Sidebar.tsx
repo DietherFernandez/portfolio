@@ -46,7 +46,7 @@ export default function Sidebar() {
       {/* TOP: Profile Section */}
       <div className="p-6 space-y-4">
         <div className="flex flex-col items-center text-center space-y-3">
-          <div className="relative w-20 h-20 rounded-os overflow-hidden bg-card group">
+          <div className="relative w-20 h-20 rounded-os overflow-hidden group">
             <img
               src="/icons/profile.png"
               alt="Diether Fernandez"
