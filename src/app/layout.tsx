@@ -86,9 +86,6 @@ export default function RootLayout({
                 <CustomCursor />
               </div>
             </div>
-            <div className="crt-overlay" />
-            <div className="crt-screen" />
-            <div className="crt-vignette" />
             <WindowManager />
             <Terminal />
             <CommandPalette />

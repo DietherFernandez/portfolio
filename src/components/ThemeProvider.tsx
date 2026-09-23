@@ -15,6 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system");
+  const [mounted, setMounted] = useState(false);
   const [transition, setTransition] = useState<{
     isActive: boolean;
     x: number;
@@ -36,9 +37,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     } else {
       setThemeState("dark");
     }
+    setMounted(true);
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     const root = window.document.documentElement;
     let actualTheme = theme;
     if (theme === "system") {
@@ -48,7 +51,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
     root.setAttribute("data-theme", actualTheme);
     localStorage.setItem("diether-os-theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const triggerTransition = async (x: number, y: number, nextTheme: "dark" | "light") => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !document.startViewTransition) {
