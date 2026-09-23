@@ -1,17 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-card-hover: var(--card-hover);
+  --color-divider: var(--divider);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-toggle-bg: var(--toggle-bg);
+  --color-toggle-border: var(--toggle-border);
+  --color-sb-bg: var(--sb-bg);
+  --color-sb-border: var(--sb-border);
+  --color-sb-text: var(--sb-text);
+  --color-sb-text-muted: var(--sb-text-muted);
+  --color-sb-icon: var(--sb-icon);
+  --color-sb-hover: var(--sb-hover);
+  --color-sb-active-bg: var(--sb-active-bg);
+  --color-sb-active-text: var(--sb-active-text);
+
+  --radius-os: 8px;
+  --radius-os-lg: 12px;
+}
 
 @layer base {
   :root {
-    --background: #F7F7F5;
-    --surface: #FFFFFF;
-    --card: #FFFFFF;
-    --border: #E5E5E5;
-    --text: #171717;
-    --text-secondary: #525252;
-    --text-muted: #737373;
-    --accent: #7CFF6B;
+    --background: #F5F5F3;
+    --surface: #EEEEE9;
+    --card: #EEEEE9;
+    --border: #DFDFD9;
+    --text: #1C1C1A;
+    --text-secondary: #666662;
+    --text-muted: #8A8A84;
+    --accent: #4D8F42;
+    --card-hover: #E8E8E2;
+    --divider: #E2E2DD;
+    --input-bg: #F0F0EC;
+    --input-border: #DCDCD6;
+    --toggle-bg: #E8E8E3;
+    --toggle-border: #D8D8D2;
+
+    /* Sidebar Specific Light Theme */
+    --sb-bg: #FFFFFF;
+    --sb-border: #E5E5E0;
+    --sb-text: #333330;
+    --sb-text-muted: #777771;
+    --sb-icon: #4A4A46;
+    --sb-hover: #F5F5F3;
+    --sb-active-bg: #F0F0EC;
+    --sb-active-text: #1C1C1A;
   }
 
   [data-theme='dark'] {
@@ -23,14 +67,184 @@
     --text-secondary: #A1A1AA;
     --text-muted: #71717A;
     --accent: #7CFF6B;
+    --card-hover: #252525;
+    --divider: #2A2A2A;
+    --input-bg: #1C1C1C;
+    --input-border: #2A2A2A;
+    --toggle-bg: #1C1C1C;
+    --toggle-border: #2A2A2A;
+
+    /* Sidebar Specific Dark Theme */
+    --sb-bg: #111111;
+    --sb-border: #2A2A2A;
+    --sb-text: #F5F5F5;
+    --sb-text-muted: #A1A1AA;
+    --sb-icon: #F5F5F5;
+    --sb-hover: #1C1C1C;
+    --sb-active-bg: #1C1C1C;
+    --sb-active-text: #F5F5F5;
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--text)] transition-colors duration-200;
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
   }
 
   .mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
   }
+}
+
+/* CRT Effect Overlay */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.06),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 2px, 3px 100%;
+}
+
+.crt-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  pointer-events: none;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+}
+
+@layer components {
+  .theme-transition-overlay {
+    @apply fixed inset-0 pointer-events-none z-[9999];
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .theme-transition-active {
+    opacity: 1;
+  }
+
+  .theme-spin-trigger {
+    @apply relative flex items-center justify-center;
+  }
+
+  .theme-spin-active .social-icon {
+    animation: theme-spin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes theme-spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(0.5);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  .theme-ripple {
+    @apply absolute rounded-full pointer-events-none transition-all duration-500 ease-out;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .theme-ripple-active {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+
+  .os-card {
+    @apply border border-border rounded-os p-4 transition-all duration-200;
+    background: var(--card);
+  }
+  .os-card:hover {
+    background: var(--card-hover);
+  }
+
+  .os-button {
+    @apply px-4 py-2 rounded-os border border-border bg-surface text-text text-sm font-medium transition-all duration-200 hover:bg-border hover:text-text active:translate-y-[1px] focus:outline-none focus:ring-2 focus:ring-accent/50;
+  }
+
+  .os-button-primary {
+    @apply bg-accent text-background border-accent font-bold;
+  }
+
+  .social-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+    background-color: currentColor;
+    mask-image: var(--icon-url);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-image: var(--icon-url);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    transition: transform 180ms ease-out, background-color 0.4s ease;
+  }
+
+  .group:hover .social-icon {
+    transform: translateY(-2px) scale(1.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-icon {
+      transition: none;
+    }
+    .group:hover .social-icon {
+      transform: none;
+    }
+  }
+}
+
+/* View Transition styles for circular reveal */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 999;
+  clip-path: circle(0% at var(--x) var(--y));
+  transition: clip-path 0.8s ease-in-out;
+}
+
+.theme-transitioning ::view-transition-new(root) {
+  clip-path: circle(150% at var(--x) var(--y));
 }

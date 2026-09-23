@@ -1,0 +1,64 @@
+DIETHER FERNANDEZ
+Developer / Builder
+Email: diether.fernandez@example.com
+GitHub: https://github.com/diether
+LinkedIn: https://linkedin.com/in/diether
+Website: https://diether.dev
+
+PROFILE
+I build practical software and digital systems. I focus on creating tools that solve real problems, prioritizing stability, utility, and clear interfaces over unnecessary decoration. My goal is to create software that is reliable, maintainable, and focused on the task at hand.
+
+TECH STACK
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: Node.js, Supabase, REST APIs
+- Desktop: Electron, WebSockets
+- Database: PostgreSQL (via Supabase)
+- Tools: Git, VS Code, Docker
+
+SELECTED PROJECTS
+
+1. NetDesk — PC Rental Management System (ACTIVE DEVELOPMENT)
+   Technologies: Next.js, TypeScript, Tailwind CSS, Supabase, React, Electron
+   - Centralized PC management dashboard for computer shops
+   - Rental session timing and automation
+   - Windows PC agent for session control
+   - Real-time PC status monitoring
+   - Payment and financial record tracking
+   - Session history and analytics
+
+2. Brgy Connect — Barangay Service Platform (COMPLETED)
+   Technologies: Next.js, TypeScript, Supabase, Tailwind CSS
+   - Resident account and profile management
+   - Multi-role access (Resident, Staff, Admin)
+   - Digital service request submission
+   - Dynamic document template generation
+   - Administrative request processing workflow
+   - Resident database management
+
+3. Diether Grain System — Rice Dealer Business Website (WEBSITE)
+   Technologies: Next.js, TypeScript, Tailwind CSS
+   - Business information showcase
+   - Product catalog display
+   - Editable content system
+   - Responsive business landing page
+
+4. Ebet — Small Eatery Website (WEBSITE)
+   Technologies: Next.js, TypeScript, Tailwind CSS
+   - Digital menu presentation
+   - Business information showcase
+   - Contact and location details
+   - Responsive mobile-first design
+
+DEVELOPMENT PHILOSOPHY
+- Real Workflows: Software should adapt to the user's actual process, not the other way around.
+- Utility First: Functionality and reliability are more important than visual trends.
+- Maintainable Code: Build systems that can be easily understood and updated over time.
+- Iterative Improvement: Ship useful versions early and refine based on actual usage.
+
+LAB EXPERIMENTS
+- Desktop Control: Exploring web-to-desktop communication via local APIs and sockets (Node.js, WebSockets, Electron)
+- Remote PC Control: Remote monitoring and interaction for rental computers (React, Rust, gRPC)
+- UI System Experiments: Testing practical desktop/web interfaces (Tailwind CSS, Next.js, Framer Motion)
+
+EDUCATION
+Self-taught developer with focus on practical, production-ready software engineering.
