@@ -34,7 +34,7 @@ export const projects: Project[] = [
     ],
     screenshots: [],
     links: {
-      // Live and repo links to be added when available
+      live: 'https://netdesk-phi.vercel.app/',
     }
   },
   {
