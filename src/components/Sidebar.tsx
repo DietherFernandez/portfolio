@@ -170,7 +170,7 @@ export default function Sidebar() {
         <div className="pt-2 space-y-2">
           <div className="flex items-center gap-2 text-[10px] mono text-muted uppercase tracking-widest opacity-60">
             <Activity className="w-3 h-3 text-accent" />
-            <span>System</span>
+            <span>Status</span>
           </div>
           <div className="flex items-center gap-2 text-[10px] mono text-secondary">
             <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />

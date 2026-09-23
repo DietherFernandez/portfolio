@@ -58,6 +58,10 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <link rel="icon" href="/icons/favicon.svg" />
+          <title>Diether Fernandez | Portfolio</title>
+        </head>
         <body className="antialiased">
           <ThemeProvider>
             {!hasBooted && (

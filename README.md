@@ -1,10 +1,10 @@
-# 🖥️ Diether OS
+# Diether OS
 
 Welcome to my digital workspace. This isn't just a portfolio—it's a functional, OS-inspired environment built to showcase my work, my experiments, and my approach to software engineering.
 
 I wanted to move away from the traditional "scroll-down" portfolio and build something that feels like a real system. The result is a blend of retro-tech aesthetics (CRT effects, terminal prompts) and modern web performance.
 
-## 🚀 The Experience
+## The Experience
 
 When you enter the site, you're greeted with a system boot sequence. Once "logged in," you have full control over the environment:
 
@@ -14,7 +14,7 @@ When you enter the site, you're greeted with a system boot sequence. Once "logge
 - **Dynamic Theming**: A seamless transition between light and dark modes with a custom circular reveal animation.
 - **Ambient Environment**: Subtle parallax backgrounds and "Studio Glow" lighting to keep the experience immersive.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 I chose these tools to ensure the site is as fast as it is visually striking:
 
@@ -24,7 +24,7 @@ I chose these tools to ensure the site is as fast as it is visually striking:
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Language**: TypeScript
 
-## ⌨️ Quick Start (For Devs)
+## Quick Start (For Devs)
 
 If you want to run this locally:
 
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-## 🕹️ System Shortcuts
+## System Shortcuts
 
 - `Ctrl + K` : Open Command Palette
 - `Ctrl + T` : Toggle System Terminal
@@ -47,4 +47,4 @@ npm run dev
 
 ---
 
-Made with ☕ and a lot of pixels by **Diether Fernandez**.
+Made with care and a lot of pixels by **Diether Fernandez**.

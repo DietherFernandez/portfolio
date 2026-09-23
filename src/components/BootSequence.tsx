@@ -6,10 +6,10 @@ const BOOT_SEQUENCE = [
   { text: "BIOS v1.0.4-stable", delay: 300 },
   { text: "Checking system memory...", delay: 600 },
   { text: "Memory OK: 16384MB", delay: 400 },
-  { text: "Loading diether-os kernel...", delay: 800 },
+  { text: "Loading kernel...", delay: 800 },
   { text: "Mounting /dev/portfolio...", delay: 500 },
   { text: "Initializing UI modules...", delay: 400 },
-  { text: "Access granted. Welcome, Diether.", delay: 600 },
+  { text: "Auth verified. Session active.", delay: 600 },
   { text: "System Ready.", delay: 200 },
 ];
 
