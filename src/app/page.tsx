@@ -39,12 +39,11 @@ export default function HomePage() {
               OPEN LAB
             </Link>
             <a
-              href="/assets/Diether_Fernandez_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume.pdf"
+              download="Diether_Fernandez_Resume.pdf"
               className="os-button inline-flex items-center gap-2"
             >
-              VIEW CV
+              DOWNLOAD CV
             </a>
           </div>
         </section>

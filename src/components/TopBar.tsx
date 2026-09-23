@@ -45,7 +45,11 @@ export default function TopBar() {
             <img
               src="/picture/profile.png"
               alt="Diether Fernandez"
-              className="w-full h-full object-cover blur-[1px]"
+              className="w-full h-full object-cover"
+              style={{
+                maskImage: 'radial-gradient(circle, black 60%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(circle, black 60%, transparent 100%)'
+              }}
             />
           </div>
 

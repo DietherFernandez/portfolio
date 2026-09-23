@@ -18,8 +18,8 @@ import ThemeToggle from "./ThemeToggle";
 
 const NAV_ITEMS = [
   { name: "OVERVIEW", href: "/", icon: LayoutDashboard },
-  { name: "PROJECTS", href: "/projects", icon: FolderKanban },
-  { name: "LAB", href: "/lab", icon: FlaskConical },
+  { name: "VIEW PROJECTS", href: "/projects", icon: FolderKanban },
+  { name: "OPEN LAB", href: "/lab", icon: FlaskConical },
   { name: "ABOUT", href: "/about", icon: User },
   { name: "CONTACT", href: "/contact", icon: Mail },
 ];
@@ -46,11 +46,11 @@ export default function Sidebar() {
       {/* TOP: Profile Section */}
       <div className="p-6 space-y-4">
         <div className="flex flex-col items-center text-center space-y-3">
-          <div className="relative w-20 h-20 rounded-os overflow-hidden group">
+          <div className="relative w-20 h-20 rounded-os overflow-hidden group shadow-md shadow-black/20 dark:shadow-black/50">
             <img
               src="/picture/profile.png"
               alt="Diether Fernandez"
-              className="w-full h-full object-cover rounded-os blur-[1px]"
+              className="w-full h-full object-cover"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';
@@ -74,6 +74,13 @@ export default function Sidebar() {
             <p className="text-[10px] mono text-sb-text-muted">
               diether.fernandez82@gmail.com
             </p>
+            <a
+              href="/resume.pdf"
+              download="Diether_Fernandez_Resume.pdf"
+              className="inline-block mt-1 text-[10px] mono text-accent hover:underline opacity-80 hover:opacity-100 transition-opacity"
+            >
+              VIEW CV
+            </a>
           </div>
         </div>
 

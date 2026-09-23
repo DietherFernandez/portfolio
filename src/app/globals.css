@@ -151,13 +151,6 @@
   );
 }
 
-.crt-vignette {
-  position: fixed;
-  inset: 0;
-  z-index: 9997;
-  pointer-events: none;
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
-}
 
 @layer components {
   .theme-transition-overlay {

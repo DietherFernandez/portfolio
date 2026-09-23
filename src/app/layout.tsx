@@ -18,9 +18,7 @@ import Terminal from "../components/os/Terminal";
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: any) {
   const [hasBooted, setHasBooted] = useState<boolean | null>(null);
   const [showShortcuts, setShowShortcuts] = useState(false);
 
