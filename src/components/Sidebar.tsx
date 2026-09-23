@@ -50,7 +50,7 @@ export default function Sidebar() {
             <img
               src="/picture/profile.png"
               alt="Diether Fernandez"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-os blur-[1px]"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';

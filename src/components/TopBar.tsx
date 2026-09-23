@@ -45,7 +45,7 @@ export default function TopBar() {
             <img
               src="/picture/profile.png"
               alt="Diether Fernandez"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover blur-[1px]"
             />
           </div>
 
