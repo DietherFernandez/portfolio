@@ -1,4 +1,4 @@
-# Diether OS
+# Diether Fernandez | Portfolio
 
 Welcome to my digital workspace. This isn't just a portfolio—it's a functional, OS-inspired environment built to showcase my work, my experiments, and my approach to software engineering.
 
